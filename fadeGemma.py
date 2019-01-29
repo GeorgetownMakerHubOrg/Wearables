@@ -28,7 +28,9 @@ def main():
     while True:
         if touch2.value:
             print("A2 touched!")
-            delay = delay/2
-            dot[0] = (0xFF,0x14,0x93)
+            led.duty_cycle = 0
+            exit()
+            # delay = delay/2
+            # dot[0] = (0xFF,0x14,0x93)
         fade(LOW, HIGH, 1, delay)     # up
         fade(HIGH, LOW, -1, delay)    # down
