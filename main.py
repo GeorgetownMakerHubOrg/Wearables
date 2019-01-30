@@ -1,2 +1,2 @@
-import fadeGemma
-fadeGemma.main()
+import switchGemma
+switchGemma.main()

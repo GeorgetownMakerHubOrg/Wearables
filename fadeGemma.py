@@ -7,7 +7,6 @@
 
 import digitalio, pulseio, board, adafruit_dotstar
 from time import sleep
-from touchio import TouchIn
 
 dot = adafruit_dotstar.DotStar(board.APA102_SCK, board.APA102_MOSI, 1)
 dot[0] = (0,0,0)
@@ -23,14 +22,7 @@ def fade(start, stop, increment, delay):
     sleep(delay)
 
 def main():
-    touch2 = TouchIn(board.A2)                 # stretch goal of switching by touch
-    delay = 0.02                               # let's have fun with this
+    delay = 0.01                               # let's have fun with this
     while True:
-        if touch2.value:
-            print("A2 touched!")
-            led.duty_cycle = 0
-            exit()
-            # delay = delay/2
-            # dot[0] = (0xFF,0x14,0x93)
         fade(LOW, HIGH, 1, delay)     # up
         fade(HIGH, LOW, -1, delay)    # down
